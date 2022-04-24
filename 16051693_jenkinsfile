@@ -22,10 +22,14 @@ pipeline{
       }
     }
     stage('16051693 Stage Four'){
-      echo 'Production website tested working'
+      steps{
+        echo 'Production website tested working'
+      }
     }
     stage('16051693 Stage Five'){
-      echo 'Production website is updated successfully'
+      steps{
+        echo 'Production website is updated successfully'
+      }
     }
   }
 }
