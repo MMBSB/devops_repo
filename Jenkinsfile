@@ -1,0 +1,32 @@
+agent any
+stages {
+  stage('16051693 Stage One'){
+    steps{
+      echo '16051693 Start of Pipeline'
+    }
+  }
+  stage('16051693 Stage Two'){
+    steps{
+      input 'Push changes to Production'
+    }
+  }
+  stage('16051693 Stage Three'){
+    when{
+      not{
+        sh '''#!/bin/bash
+        targets=websvr_16051693;
+        locate_script='/16051693/script_dir/operate_repo/script_to_run';
+        docker cp $locate_script $targets://$locate_script;
+        bolt script run $locate_script -t $targets -u clientadm -p User123 --no-host-key-check --run-as root;
+        '''
+        echo 'Stage 3 Completed - 16051693' 
+      }
+    }
+  }
+  stage('16051693 Stage Four'){
+    echo 'Production website tested working'
+  }
+  stage('16051693 Stage Five'){
+    echo 'Production website is updated successfully'
+  }
+}
