@@ -2,9 +2,9 @@
 puppet resource package git ensure=present
 puppet resource package apache2 ensure=present
 puppet resource service apache2 ensure=running
-puppet resource file /script_dir/clone ensure=absent force=true
-puppet resource file /script_dir ensure=directory
-puppet resource file /script_dir/clone ensure=directory
-cd /script_dir/clone
+puppet resource file /testdir/clone ensure=absent force=true
+puppet resource file /testdir ensure=directory
+puppet resource file /testdir/clone ensure=directory
+cd /testdir/clone
 git clone https://ghp_OWy61dnP7Htx9PTA1wYBNejBGOpUOm05qr6x@github.com/MMBSB/operate_repo.git
-cp -p /script_dir/clone/operate_repo/index.html /var/www/html
+cp -p /testdir/clone/operate_repo/index.html /var/www/html
