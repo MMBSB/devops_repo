@@ -1,4 +1,3 @@
-agent any
 stages {
   stage('16051693 Stage One'){
     steps{
@@ -14,7 +13,7 @@ stages {
     steps{
       sh '''#!/bin/bash
       targets=websvr_16051693;
-      locate_script='/16051693/script_dir/16051693_script';
+      locate_script='/16051693/script_dir/operate_repo/16051693_script';
       docker cp $locate_script $targets://$locate_script;
       bolt script run $locate_script -t $targets -u clientadm -p User123 --no-host-key-check --run-as root;
       '''
