@@ -1,4 +1,5 @@
 pipeline{
+  agent any
   stages {
     stage('16051693 Stage One'){
       steps{
