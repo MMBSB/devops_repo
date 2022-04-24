@@ -6,5 +6,5 @@ puppet resource file /script_dir/clone ensure=absent force=true
 puppet resource file /script_dir ensure=directory
 puppet resource file /script_dir/clone ensure=directory
 cd /script_dir/clone
-git clone https://github.com/MMBSB/operate_repo.git
+git clone https://ghp_OWy61dnP7Htx9PTA1wYBNejBGOpUOm05qr6x@github.com/MMBSB/operate_repo.git
 cp -p /script_dir/clone/operate_repo/index.html /var/www/html
