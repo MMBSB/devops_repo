@@ -4,8 +4,8 @@ puppet resource package apache2 ensure=present
 puppet resource service apache2 ensure=running
 puppet module install puppetlabs-vcsrepo
 puppet resource file /16051693/script_dir ensure=absent force=true
-puppet resource file /16051693 ensure=directory
-puppet resource file /16051693/script_dir/ ensure=directory
+puppet resource file /16051693/ ensure=directory
+puppet resource file /16051693/script_dir ensure=directory
 cd /16051693/script_dir/
 git clone https://ghp_OWy61dnP7Htx9PTA1wYBNejBGOpUOm05qr6x@github.com/MMBSB/operate_repo.git
 cp -p /16051693/script_dir/operate_repo/index.html /var/www/html
