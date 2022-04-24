@@ -17,7 +17,7 @@ pipeline{
         targets=websvr_16051693;
         locate_script='/16051693/script_dir/operate_repo/16051693_script';
         docker cp $locate_script $targets://$locate_script;
-        bolt script run $locate_script -t $targets -u clientadm -p User123 --no-host-key-check --run-as root;
+        bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
         '''
         echo 'Stage 3 Completed - 16051693' 
       }
